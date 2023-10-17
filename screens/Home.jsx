@@ -1,6 +1,7 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, FlatList, Button } from 'react-native'
 import React from 'react'
 import { StatusBar } from 'expo-status-bar'
+import { useNavigation } from '@react-navigation/native'
 
 const style = StyleSheet.create({
   text : {
@@ -28,12 +29,41 @@ const style = StyleSheet.create({
   }
 })
 
+const list = [
+  {name : 'Esu'},
+  {name : 'John'},
+  {name : 'Doe'},
+  {name : 'Bow'},
+  {name : 'Ben'},
+  {name : 'Ban'},
+  {name : 'Bin'},
+  {name : 'Bun'},
+]
+
 const Home = () => {
+
+  const navigation = useNavigation()
+
   return (
     <View>
       <StatusBar animated={true} backgroundColor='black'/>
       <View style={style.text}>
         <Text>Home page</Text>
+      </View>
+      <View>
+        <FlatList
+            horizontal={true} 
+            showsHorizontalScrollIndicator={false}
+            key={(item)=>item.name}
+            data={list}
+            renderItem={({item})=>
+            <Text style={{alignSelf:'center', marginLeft:70, fontSize:30, marginTop:50}}>{item.name}</Text>
+          }
+        />
+
+      </View>
+      <View>
+        <Button  title='Note' onPress={() => navigation.navigate('note')}/>
       </View>
     </View>
   )
