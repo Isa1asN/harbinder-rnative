@@ -1,7 +1,8 @@
-import { View, Text, StyleSheet, FlatList, Button } from 'react-native'
+import { View, Text, StyleSheet, FlatList, Button, Image } from 'react-native'
 import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { useNavigation } from '@react-navigation/native'
+import note from '../assets/note.png'
 
 const style = StyleSheet.create({
   text : {
@@ -17,11 +18,15 @@ const Home = () => {
   const navigation = useNavigation()
 
   return (
-    <View>
-      <StatusBar animated={true}  backgroundColor='black'/>
-      
-    
+    <>
+    <StatusBar animated={true}  backgroundColor='black'/>
+    <View >
+      <Image 
+        source={note}
+        style={{width:'100',  }}
+      />
     </View>
+    </>
   )
 }
 
