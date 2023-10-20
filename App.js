@@ -14,22 +14,10 @@ export default function App() {
         <Stack.Screen
          name='home' 
          component={Home} 
-         options={{
-          title : 'Home page',
-          headerStyle :{
-            backgroundColor : 'orange',
-            borderBottomEndRadius : 30
-            // borderTopRightRadius:110
-          },
-          headerTitleStyle : {
-            color : 'red',
-          },
-          headerTitleAlign : 'center'
-          }} />
+         options={{headerShown : false}} />
         <Stack.Screen name='note' component={Note}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
- 
