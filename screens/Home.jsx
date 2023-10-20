@@ -25,7 +25,7 @@ const Home = () => {
       </View>
       <Image 
         source={note}
-        style={{width:'100', opacity:0.4}}
+        style={{width:'100', opacity:0.4, zIndex:1}}
       />
         <Text >
         Welcome to Memopad!
