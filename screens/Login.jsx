@@ -76,7 +76,7 @@ const Login = () => {
                     No account ? 
                 </Text>
             </View>
-        <TouchableOpacity style={style.btnRegister} onPress={()=>navigate.navigate('register')}>
+        <TouchableOpacity style={style.btnRegister} onPress={()=>navigate.replace('register')}>
             <Text style={{fontSize:20}}>
                 Register
             </Text>
