@@ -3,13 +3,11 @@ import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 import { useNavigation } from '@react-navigation/native'
 import note from '../assets/note.png'
+import NoteComponent from '../components/NoteComponent'
 
 const style = StyleSheet.create({
   text : {
-    
     },
-    
-
   }
 )
 
@@ -37,7 +35,8 @@ const Home = () => {
         source={note}
         style={{width:'100',height: '100%', opacity:0.3, zIndex:-4}}
       />
-      <View>
+      <View style={{top:130,position:'absolute', width:'90%', justifyContent:'center'}}>
+        <NoteComponent title={"Take out Trash"} />
       </View>
     </View>
     </>
