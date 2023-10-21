@@ -5,10 +5,16 @@ import { Ionicons } from '@expo/vector-icons';
 const style = StyleSheet.create({
     container : {
         alignItems:'center',
-        justifyContent : 'space-between'
+        backgroundColor:'white',
+        flex:1,
+        justifyContent:'flex-start'
     },
     textinput : {
         borderWidth:1
+    },
+    icon :{
+        marginTop:100,
+        
     }
 })
 
@@ -16,7 +22,7 @@ const style = StyleSheet.create({
 const Login = () => {
   return (
     <View style={style.container}>
-        <Ionicons name="person-circle-sharp" size={104} color="black" />
+        <Ionicons style={style.icon} name="person-circle-sharp" size={129} color="#84c8c3" />
         <View>
             <View>
                 <TextInput style={style.textinput}/>
@@ -30,6 +36,11 @@ const Login = () => {
                 Sign in
             </Text>
         </TouchableOpacity>
+            <View>
+                <Text>
+                    No account ? 
+                </Text>
+            </View>
         <TouchableOpacity>
             <Text>
                 Register

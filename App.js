@@ -12,7 +12,7 @@ export default function App() {
     <NavigationContainer >
       <Stack.Navigator initialRouteName='welcome' >
         <Stack.Screen name='welcome' component={Welcome} options={{headerShown : false,}} />
-        <Stack.Screen name='login' component={Login} options={{title:'Login', headerTitleAlign:'center', headerStyle:{backgroundColor:'#84c8c3'}}} />
+        <Stack.Screen name='login' component={Login} options={{title:'Login', headerTitleAlign:'center', headerStyle:{borderBottomWidth:1, borderColor:'#84c8c3'}}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
