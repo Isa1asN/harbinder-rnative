@@ -68,7 +68,7 @@ const Login = () => {
         </View>
         <TouchableOpacity style={style.btn}>
             <Text style={{fontSize:20}}>
-                Sign in
+                Log in
             </Text>
         </TouchableOpacity>
             <View>
