@@ -20,16 +20,23 @@ const Home = () => {
   return (
     <>
     <StatusBar animated={true}  backgroundColor='black'/>
-    <View >
-      <View style={{backgroundColor:'rgba(0, 0, 0, .4)', width:'100%', height:'100%', position:'absolute'}}>
+    <View style={{backgroundColor:'rgb(245, 238, 238)', height:'100%'}}>
+      <View style={{backgroundColor:'rgba(0, 0, 0, .15)', width:'100%', height:'100%', position:'absolute', justifyContent : 'flex-start'}}>
+      <Text style={{
+        alignSelf : 'center',
+        fontFamily : 'monospace',
+        fontSize : 26,
+        fontWeight : 'bold',
+        top : 60,
+        borderBottomWidth : 1,
+        }} >
+        My Notes
+        </Text>
       </View>
       <Image 
         source={note}
-        style={{width:'100', opacity:0.4, zIndex:1}}
+        style={{width:'100',height: '100%', opacity:0.3, zIndex:-4}}
       />
-        <Text >
-        Welcome to Memopad!
-        </Text>
       <View>
       </View>
     </View>
