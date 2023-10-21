@@ -13,7 +13,7 @@ export default function App() {
         <Stack.Screen
          name='welcome' 
          component={Welcome} 
-         options={{headerShown : false}} />
+         options={{headerShown : false,}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
