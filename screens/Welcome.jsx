@@ -1,4 +1,4 @@
-import { View, Text, Image,StyleSheet } from 'react-native'
+import { View, Text, Image,StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import logo from '../assets/logo.png'
 
@@ -7,12 +7,12 @@ const style = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#c4d3d2',
+        backgroundColor: '#84c8c3',
     },
     logoC: {
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor:'#c4d3d2'
+        backgroundColor:'#84c8c3'
     },
     logoName: {
         fontSize: 33,
@@ -22,7 +22,7 @@ const style = StyleSheet.create({
     intro :{
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor:'#c4d3d2',
+        backgroundColor:'#84c8c3',
         padding: 20,
         marginTop: 30,
         marginBottom: 30,
@@ -33,8 +33,24 @@ const style = StyleSheet.create({
         color: '#4b606e',
         textAlign: 'center',
         marginBottom: 10,
-    }});
+    },
+    touchbtn: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#0090f0',
+        padding: 10,
+        borderRadius: 7,
+        width: 150,
+        marginTop: 200,
+    },
+    btntxt :{
+        fontSize: 18,
+        fontWeight: '400',
+        color: '#fff',
+    }
+});
 
+const handlePress = () => console.log("Text Pressed");
 const Welcome = () => {
   return (
     <View style={style.container}>
@@ -48,6 +64,11 @@ const Welcome = () => {
         </View>
         <View style={style.intro}>
             <Text style={style.introText}>Step into Harbinder, where conversations unfold with ease and every word finds its place.</Text>
+            <TouchableOpacity style={style.touchbtn}>
+                <Text style={style.btntxt} onPress={handlePress}>
+                    Get Started
+                </Text>
+            </TouchableOpacity>
         </View>
     </View>
   )
