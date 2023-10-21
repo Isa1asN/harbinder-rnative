@@ -1,6 +1,8 @@
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Ionicons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const style = StyleSheet.create({
     container : {
@@ -10,11 +12,21 @@ const style = StyleSheet.create({
         justifyContent:'flex-start'
     },
     textinput : {
-        borderWidth:1
+        flex:1,
+        fontSize:16,
+        paddingHorizontal:5,
     },
     icon :{
         marginTop:100,
-        
+    },
+    inputcontainer : {
+        borderWidth:1,
+        width : 270,
+        display:'flex',
+        flexDirection:'row',
+        margin:15,
+        padding:6,
+        borderRadius:9,
     }
 })
 
@@ -24,11 +36,13 @@ const Login = () => {
     <View style={style.container}>
         <Ionicons style={style.icon} name="person-circle-sharp" size={129} color="#84c8c3" />
         <View>
-            <View>
-                <TextInput style={style.textinput}/>
+            <View style={style.inputcontainer}>
+                <MaterialIcons name="email" size={29} color="#84c8c3" />
+                <TextInput keyboardType='email-address' autoCorrect={false} placeholder='Email' style={style.textinput}/>
             </View>            
-            <View>
-                <TextInput style={style.textinput}/>
+            <View style={style.inputcontainer}>
+                <FontAwesome5 name="key" size={29} color="#84c8c3" />
+                <TextInput type autoCorrect={false} placeholder='Password' style={style.textinput}/>
             </View>
         </View>
         <TouchableOpacity>
