@@ -68,8 +68,9 @@ const Welcome = () => {
         </View>
         <View style={style.intro}>
             <Text style={style.introText}>Step into Harbinder, where conversations unfold with ease and every word finds its place.</Text>
-            <TouchableOpacity style={style.touchbtn}>
-                <Text style={style.btntxt} onPress={()=>  navigate.replace('login')}>
+            
+            <TouchableOpacity style={style.touchbtn} onPress={()=>  navigate.replace('login')}>
+                <Text style={style.btntxt} >
                     Get Started
                 </Text>
             </TouchableOpacity>
