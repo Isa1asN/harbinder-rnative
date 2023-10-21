@@ -1,6 +1,7 @@
 import { View, Text, Image,StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import logo from '../assets/logo.png'
+import { useNavigation } from '@react-navigation/native';
 
 const style = StyleSheet.create({  
     container: {
@@ -50,8 +51,10 @@ const style = StyleSheet.create({
     }
 });
 
-const handlePress = () => console.log("Text Pressed");
 const Welcome = () => {
+    
+    const navigate = useNavigation();
+    
   return (
     <View style={style.container}>
         <View style={style.logoC}>
@@ -65,7 +68,7 @@ const Welcome = () => {
         <View style={style.intro}>
             <Text style={style.introText}>Step into Harbinder, where conversations unfold with ease and every word finds its place.</Text>
             <TouchableOpacity style={style.touchbtn}>
-                <Text style={style.btntxt} onPress={handlePress}>
+                <Text style={style.btntxt} onPress={()=>  navigate.replace('login')}>
                     Get Started
                 </Text>
             </TouchableOpacity>
