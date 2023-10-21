@@ -3,6 +3,7 @@ import React from 'react'
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 const style = StyleSheet.create({
     container : {
@@ -27,11 +28,31 @@ const style = StyleSheet.create({
         margin:15,
         padding:6,
         borderRadius:9,
+    },
+    btn :{
+        backgroundColor:'#84c8c3',
+        padding:10,
+        width:124,
+        alignItems:'center',
+        borderRadius:9,
+        margin:10
+    },
+    btnRegister : {
+        backgroundColor:'#ffffff',
+        padding:10,
+        width:124,
+        alignItems:'center',
+        borderRadius:9,
+        margin:15,
+        borderWidth:2,
+        borderColor:'#84c8c3'
     }
 })
 
 
 const Login = () => {
+    const navigate = useNavigation();
+
   return (
     <View style={style.container}>
         <Ionicons style={style.icon} name="person-circle-sharp" size={129} color="#84c8c3" />
@@ -45,8 +66,8 @@ const Login = () => {
                 <TextInput type autoCorrect={false} placeholder='Password' style={style.textinput}/>
             </View>
         </View>
-        <TouchableOpacity>
-            <Text>
+        <TouchableOpacity style={style.btn}>
+            <Text style={{fontSize:20}}>
                 Sign in
             </Text>
         </TouchableOpacity>
@@ -55,8 +76,8 @@ const Login = () => {
                     No account ? 
                 </Text>
             </View>
-        <TouchableOpacity>
-            <Text>
+        <TouchableOpacity style={style.btnRegister} onPress={()=>navigate.navigate('register')}>
+            <Text style={{fontSize:20}}>
                 Register
             </Text>
         </TouchableOpacity>
