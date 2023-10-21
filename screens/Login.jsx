@@ -63,7 +63,7 @@ const Login = () => {
             </View>            
             <View style={style.inputcontainer}>
                 <FontAwesome5 name="key" size={29} color="#84c8c3" />
-                <TextInput type autoCorrect={false} placeholder='Password' style={style.textinput}/>
+                <TextInput secureTextEntry autoCorrect={false} placeholder='Password' style={style.textinput}/>
             </View>
         </View>
         <TouchableOpacity style={style.btn}>
