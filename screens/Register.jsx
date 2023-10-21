@@ -77,10 +77,10 @@ const Register = () => {
         </TouchableOpacity>
             <View>
                 <Text>
-                    No account ? 
+                    Already have an account ? 
                 </Text>
             </View>
-        <TouchableOpacity style={style.btnRegister} onPress={()=>navigate.replace('register')}>
+        <TouchableOpacity style={style.btnRegister} onPress={()=>navigate.replace('login')}>
             <Text style={{fontSize:20}}>
                 Log in
             </Text>

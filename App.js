@@ -16,7 +16,7 @@ export default function App() {
 
         <Stack.Screen name='login' component={Login} options={{title:'Login', headerTitleAlign:'center', headerStyle:{borderBottomWidth:1, borderColor:'#84c8c3'}}} />
 
-        <Stack.Screen name='register' component={Register}/>
+        <Stack.Screen name='register' component={Register} options={{title:'Register', headerTitleAlign:'center', headerStyle:{borderBottomWidth:1, borderColor:'#84c8c3'}}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
