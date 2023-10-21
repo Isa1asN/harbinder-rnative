@@ -41,7 +41,8 @@ const style = StyleSheet.create({
         backgroundColor: '#0090f0',
         padding: 10,
         borderRadius: 7,
-        width: 150,
+        width: 250,
+        paddingVertical:13,
         marginTop: 200,
     },
     btntxt :{
@@ -54,7 +55,7 @@ const style = StyleSheet.create({
 const Welcome = () => {
     
     const navigate = useNavigation();
-    
+
   return (
     <View style={style.container}>
         <View style={style.logoC}>
