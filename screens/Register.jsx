@@ -4,6 +4,8 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
+import { useState } from 'react';
+import { auth } from '../firebase';
 
 const style = StyleSheet.create({
     container : {
@@ -50,8 +52,29 @@ const style = StyleSheet.create({
 })
 
 
+
 const Register = () => {
     const navigate = useNavigation();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [fullname, setFullname] = useState('');
+
+    const handleRegister = () => {
+        try {
+            auth.createUserWithEmailAndPassword(email,password)
+            .then((userCredential) => {
+                var user = userCredential.user;
+                user.updateProfile({
+                    displayName:fullname
+                })
+                alert("User registered successfully")
+                navigate.goBack('login')
+            })
+        } catch (error) {
+            alert("Error occured while registering")
+            console.log(error)
+        }
+    }
 
   return (
     <View style={style.container}>
@@ -59,18 +82,18 @@ const Register = () => {
         <View>
             <View style={style.inputcontainer}>
                 <Ionicons name="md-person" size={29} color="#84c8c3" />
-                <TextInput keyboardType='email-address' autoCorrect={false} placeholder='Full Name' style={style.textinput}/>
+                <TextInput keyboardType='email-address' autoCorrect={false} placeholder='Full Name' style={style.textinput} value={fullname} onChangeText={(text)=> setFullname(text)}/>
             </View> 
             <View style={style.inputcontainer}>
                 <MaterialIcons name="email" size={29} color="#84c8c3" />
-                <TextInput keyboardType='email-address' autoCorrect={false} placeholder='Email' style={style.textinput}/>
+                <TextInput keyboardType='email-address' autoCorrect={false} placeholder='Email' style={style.textinput} value={email} onChangeText={(text)=> setEmail(text)}/>
             </View>            
             <View style={style.inputcontainer}>
                 <FontAwesome5 name="key" size={29} color="#84c8c3" />
-                <TextInput secureTextEntry autoCorrect={false} placeholder='Password' style={style.textinput}/>
+                <TextInput secureTextEntry autoCorrect={false} placeholder='Password' style={style.textinput} value={password} onChangeText={(text) =>setPassword(text)}/>
             </View>
         </View>
-        <TouchableOpacity style={style.btn} >
+        <TouchableOpacity style={style.btn} onPress={handleRegister} >
             <Text style={{fontSize:20}}>
                 Register
             </Text>
