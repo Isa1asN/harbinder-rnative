@@ -59,7 +59,7 @@ const Register = () => {
         <View>
             <View style={style.inputcontainer}>
                 <Ionicons name="md-person" size={29} color="#84c8c3" />
-                <TextInput keyboardType='email-address' autoCorrect={false} placeholder='Email' style={style.textinput}/>
+                <TextInput keyboardType='email-address' autoCorrect={false} placeholder='Full Name' style={style.textinput}/>
             </View> 
             <View style={style.inputcontainer}>
                 <MaterialIcons name="email" size={29} color="#84c8c3" />
@@ -80,7 +80,7 @@ const Register = () => {
                     Already have an account ? 
                 </Text>
             </View>
-        <TouchableOpacity style={style.btnRegister} onPress={()=>navigate.replace('login')}>
+        <TouchableOpacity style={style.btnRegister} onPress={()=>navigate.goBack('login')}>
             <Text style={{fontSize:20}}>
                 Log in
             </Text>
