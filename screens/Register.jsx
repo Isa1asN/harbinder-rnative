@@ -70,7 +70,7 @@ const Register = () => {
                 <TextInput secureTextEntry autoCorrect={false} placeholder='Password' style={style.textinput}/>
             </View>
         </View>
-        <TouchableOpacity style={style.btn}>
+        <TouchableOpacity style={style.btn} >
             <Text style={{fontSize:20}}>
                 Register
             </Text>
