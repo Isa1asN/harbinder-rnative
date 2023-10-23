@@ -5,7 +5,6 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import { useState } from 'react';
-import { auth } from '../firebase';
 
 const style = StyleSheet.create({
     container : {
