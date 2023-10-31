@@ -60,15 +60,8 @@ const Register = () => {
 
     const handleRegister = () => {
         try {
-            auth.createUserWithEmailAndPassword(email,password)
-            .then((userCredential) => {
-                var user = userCredential.user;
-                user.updateProfile({
-                    displayName:fullname
-                })
-                alert("User registered successfully")
-                navigate.goBack('login')
-            })
+            navigate.navigate('home')
+            
         } catch (error) {
             alert("Error occured while registering")
             console.log(error)
